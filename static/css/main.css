@@ -1,0 +1,24 @@
+body {
+  background: #f9f9f9;
+}
+
+.wrapper-oinks {
+  margin-top: 30px;
+}
+
+.wrapper-oinks .oink,
+.notifications-wrapper .media {
+  margin-bottom: 10px;
+  padding: 19px;
+  border-radius: 4px;
+  background: white;
+}
+
+.wrapper-oinks .oink .name {
+  font-weight: bold;
+}
+
+.wrapper-oinks .oink .info {
+  font-size: 11px;
+  color: #aaa;
+}
