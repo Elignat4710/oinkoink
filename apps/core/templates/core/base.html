@@ -17,18 +17,18 @@
     </head>
 
     <body>
-        <nav class="navbar is-info" role="navigation">
+        <nav class="navbar is-info" role="navigation" id="baseapp">
             <div class="navbar-brand">
                 <a href="/" class="navbar-item"><strong>OinkOink</strong></a>
 
-                <a href="" class="navbar-burger">
+                <a @click="makeBurger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" v-bind:class="{ 'is-active': activator }">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </a>
             </div>
 
-            <div class="navbar-menu">
+            <div  class="navbar-menu" v-bind:class="{ 'is-active': activator }" id="navbarBasicExample" >
                 <div class="navbar-start">
                     <div class="navbar-item">
                         <form action="{% url 'search' %}" method="GET">
@@ -75,5 +75,22 @@
 
         {% block script %}
         {% endblock %}
+
+        <script>
+            new Vue({
+                el: '#baseapp',
+                data() {
+                    return{
+                        activator: false
+                    }
+                },
+                methods: {
+                    makeBurger () {
+                        this.activator = !this.activator
+                        return this.activator
+                    }
+                }
+            })
+        </script>
     </body>
 </html>
